@@ -10,11 +10,15 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt Builder
-
+name: Build OpenWrt
 on:
   repository_dispatch:
   workflow_dispatch:
+  # ... 其他触发条件
+
+# 在 jobs 之前加入以下内容
+permissions:
+  contents: write  # 关键！允许创建Release
 
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
